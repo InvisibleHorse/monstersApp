@@ -1,0 +1,37 @@
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+import PropTypes from 'prop-types';
+import ImageOfMonster from './Image/ImageOfMonster';
+import s from './Monsters.module.css';
+
+export default function Monster(props) {
+    return (
+        <Card className={s.card} sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+                <ImageOfMonster id={props.id} />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {props.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        <span className={s.span}>Home Planet: </span>{props.company}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                    More info
+                </Button>
+            </CardActions>
+        </Card>
+    );
+}
+
+Monster.propTypes = {
+    name: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+};
