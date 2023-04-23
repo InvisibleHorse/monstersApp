@@ -2,17 +2,17 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button, CardActions } from '@mui/material';
 import PropTypes from 'prop-types';
 import ImageOfMonster from './Image/ImageOfMonster';
 import s from './Monsters.module.css';
 
 export default function Monster(props) {
     return (
-        <Card className={s.card} sx={{ maxWidth: 345 }}>
-            <CardActionArea>
+        <div className={s.zoom}>
+            <Card className={s.card} sx={{ width: 250 }}>
                 <ImageOfMonster id={props.id} />
-                <CardContent>
+                <CardContent className={s.cardContent}>
                     <Typography gutterBottom variant="h5" component="div">
                         {props.name}
                     </Typography>
@@ -20,13 +20,13 @@ export default function Monster(props) {
                         <span className={s.span}>Home Planet: </span>{props.company}
                     </Typography>
                 </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    More info
-                </Button>
-            </CardActions>
-        </Card>
+                <CardActions>
+                    <Button size="small" color="primary">
+                        More info
+                    </Button>
+                </CardActions>
+            </Card>
+        </div>
     );
 }
 
