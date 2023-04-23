@@ -1,7 +1,7 @@
 import React from 'react';
-import Monster from '../../components/monsters/Monster';
+import Monster from './Monster';
 
-export default function SingleMonsterContainer(props) {
+export default function SingleMonsterCover(props) {
     return (
         props.monsters.map(
             m => (

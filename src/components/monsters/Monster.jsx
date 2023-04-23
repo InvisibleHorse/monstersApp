@@ -1,16 +1,18 @@
-import * as React from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Button, CardActions } from '@mui/material';
-import PropTypes from 'prop-types';
-import ImageOfMonster from './Image/ImageOfMonster';
+
 import s from './Monsters.module.css';
+import ImageOfMonster from './Image/ImageOfMonster';
 
 export default function Monster(props) {
     return (
         <div className={s.zoom}>
-            <Card className={s.card} sx={{ width: 250 }}>
+            <Card className={s.card}>
                 <ImageOfMonster id={props.id} />
                 <CardContent className={s.cardContent}>
                     <Typography gutterBottom variant="h5" component="div">
