@@ -1,18 +1,26 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Monster from '../../components/monsters/Monsters';
 import { getMonsters } from '../../store/thunks/monsters';
+import SingleMonster from '../../components/monster/SingleMonster';
 
 function MonsterContainer() {
     const dispatch = useDispatch();
-    const monsters = useSelector(state => state.monsters.monsters);
+    const monster = useSelector(state => state.monster.monster);
 
     useEffect(() => {
-        dispatch(getMonsters(0, 3));
+        dispatch(getMonsters(monster.id));
     }, []);
 
     return (
-        <Monster monsters={monsters} />
+        {monster.map(monster => (
+                <SingleMonster
+                    key={monster.id}
+                    name={monster.name}
+                    company={monster.company.name}
+                    id={monster.id}
+                    onClickMoreInfo={props.onClickMoreInfo}
+                />
+            ))}
     );
 }
 

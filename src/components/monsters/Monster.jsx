@@ -27,7 +27,7 @@ export default function Monster(props) {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" color="primary" onClick={onClickMoreInfo}>
+                    <Button size="small" color="success" onClick={onClickMoreInfo}>
                         More info
                     </Button>
                 </CardActions>
