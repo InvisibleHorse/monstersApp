@@ -12,4 +12,7 @@ export const monsters = {
     getMonsters(page, limit) {
         return instance.get(`users?_start=${page}&_limit=${limit}`);
     },
+    getMonster(id) {
+        return instance.get(`users/${id}`);
+    },
 };

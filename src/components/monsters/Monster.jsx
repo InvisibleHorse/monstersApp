@@ -10,6 +10,10 @@ import s from './Monsters.module.css';
 import ImageOfMonster from './Image/ImageOfMonster';
 
 export default function Monster(props) {
+    const onClickMoreInfo = () => {
+        props.onClickMoreInfo(props.id);
+    };
+
     return (
         <div className={s.zoom}>
             <Card className={s.card}>
@@ -23,7 +27,7 @@ export default function Monster(props) {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" color="primary">
+                    <Button size="small" color="primary" onClick={onClickMoreInfo}>
                         More info
                     </Button>
                 </CardActions>
@@ -36,4 +40,5 @@ Monster.propTypes = {
     name: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
+    onClickMoreInfo: PropTypes.func.isRequired,
 };
