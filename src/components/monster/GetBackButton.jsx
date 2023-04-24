@@ -8,13 +8,15 @@ import s from './Monster.module.css';
 export default function GetBackButton() {
     return (
         <div className={s.mainInfo}>
-            <Button
-                variant="plain"
-                endDecorator={<KeyboardArrowLeft />}
-                color="success"
-            >
-                <NavLink className={s.nav} to="/">Get Back</NavLink>
-            </Button>
+            <NavLink className={s.nav} to="/">
+                <Button
+                    variant="plain"
+                    endDecorator={<KeyboardArrowLeft />}
+                    color="success"
+                >
+                    Get Back
+                </Button>
+            </NavLink>
         </div>
     );
 }
