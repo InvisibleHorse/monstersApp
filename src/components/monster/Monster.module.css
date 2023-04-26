@@ -1,0 +1,43 @@
+.monstersImage{
+    height:10rem;
+    width:10rem;
+    border-radius: 50%;
+    margin-bottom: 2rem ;
+    background-color: white;
+    box-shadow: 0.5px 0.5px 0.8px 1.3px #d7d6d6 inset;
+}
+.mainBox{
+    border-radius: 20%;
+    background-color: rgba(245, 245, 245, 0.58);
+    margin:2rem;
+    padding: 2rem;
+    box-shadow: 2px 2px 2px 3px #d7d6d6;
+}
+.mainInfo{
+    text-align: left;
+    padding-left:2rem;
+}
+.list{
+    list-style-type: "\1F47D";
+}
+.liElement{
+    margin-left: 0.5rem;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    color: rgba(0, 0, 0, 0.6);
+}
+.h1{
+    margin:0;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.334;
+    letter-spacing: 0em;
+}
+
+.nav{
+    color: #2e7d32;
+}
