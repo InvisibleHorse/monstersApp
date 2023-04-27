@@ -9,9 +9,11 @@
 .mainBox{
     border-radius: 20%;
     background-color: rgba(245, 245, 245, 0.58);
-    margin:2rem;
+    margin:4rem 2rem 2rem 2rem;
     padding: 2rem;
     box-shadow: 2px 2px 2px 3px #d7d6d6;
+    position: absolute;
+    width: 26rem;
 }
 .mainInfo{
     text-align: left;
@@ -22,7 +24,7 @@
 }
 .liElement{
     margin-left: 0.5rem;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-family: 'Avenir', sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.43;
@@ -31,11 +33,12 @@
 }
 .h1{
     margin:0;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-family: 'Avenir', sans-serif;
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.334;
     letter-spacing: 0em;
+
 }
 
 .nav{

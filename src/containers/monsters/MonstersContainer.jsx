@@ -9,6 +9,7 @@ import Monsters from '../../components/monsters/Monsters';
 import { getMonster } from '../../store/thunks/monster';
 import { getMonsters } from '../../store/thunks/monsters';
 import Preloader from '../../partials/Preloader';
+import s from '../../components/monsters/Monsters.module.css';
 
 function MonstersContainer() {
     const dispatch = useDispatch();
@@ -41,7 +42,15 @@ function MonstersContainer() {
             {isLoading ? <Preloader /> : null}
             { isEmpty
                 ? null
-                : <Button color="success" onClick={loadMore}>Load more</Button> }
+                : (
+                    <Button
+                        className={s.textStyle}
+                        color="success"
+                        onClick={loadMore}
+                    >
+                        Load more
+                    </Button>
+                ) }
         </Container>
     );
 }

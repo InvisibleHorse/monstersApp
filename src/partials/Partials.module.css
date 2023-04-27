@@ -1,3 +1,27 @@
 .padding {
     padding: 0.5rem;
 }
+.header {
+    background-color: transparent;
+    font-weight: bold;
+    padding: 0.5rem 0.5rem 0.5rem 5rem !important;
+    text-align: left !important;
+    position: fixed;
+}
+.header h1 {
+    padding: 0;
+    margin: 0;
+}
+.header p {
+    padding: 0;
+    margin: 0;
+}
+.footer {
+    margin-top: 0.2rem;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.63);
+    padding:1%;
+}
+.footer p{
+    margin:0;
+}
