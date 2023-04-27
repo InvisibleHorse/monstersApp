@@ -7,36 +7,41 @@ import { Button, Container } from '@mui/material';
 
 import Monsters from '../../components/monsters/Monsters';
 import { getMonster } from '../../store/thunks/monster';
-import { getMonsters, loadMoreThunk } from '../../store/thunks/monsters';
+import { getMonsters } from '../../store/thunks/monsters';
+import Preloader from '../../partials/Preloader';
 
 function MonstersContainer() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const monsters = useSelector(state => state.monsters.monsters);
+    const isLoading = useSelector(state => state.monsters.isLoading);
+    const isEmpty = useSelector(state => state.monsters.isEmpty);
 
-    const defaultMonstersLength = monsters.length;
     const onClickMoreInfo = id => {
         dispatch(getMonster(id));
         navigate(`/${id}`);
     };
-    const [limit, setLimit] = useState(3);
-    const limitStep = limit + 3;
+    const [limit] = useState(3);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
-        dispatch(getMonsters(0, limit, monsters.length));
-    }, []);
+        if (monsters.length === 0) {
+            dispatch(getMonsters(0, limit));
+        }
+    }, [monsters]);
 
     const loadMore = () => {
-        dispatch(loadMoreThunk(0, limitStep));
-        setLimit(limitStep);
+        dispatch(getMonsters(page + 1, limit));
+        setPage(page + 1);
     };
 
     return (
         <Container maxWidth="md">
             <Monsters onClickMoreInfo={onClickMoreInfo} monsters={monsters} />
-            {limit <= defaultMonstersLength
-                ? <Button onClick={loadMore}>Load more</Button>
-                : null}
+            {isLoading ? <Preloader /> : null}
+            { isEmpty
+                ? null
+                : <Button color="success" onClick={loadMore}>Load more</Button> }
         </Container>
     );
 }

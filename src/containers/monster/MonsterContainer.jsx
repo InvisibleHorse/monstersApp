@@ -8,6 +8,7 @@ import SingleMonster from '../../components/monster/SingleMonster';
 function MonsterContainer() {
     const dispatch = useDispatch();
     const monster = useSelector(state => state.monster.monster);
+    const isLoading = useSelector(state => state.monsters.isLoading);
 
     const { id } = useParams();
 
@@ -16,7 +17,7 @@ function MonsterContainer() {
     }, []);
 
     return (
-        Object.keys(monster).length !== 0 && <SingleMonster monster={monster} />
+        Object.keys(monster).length !== 0 && <SingleMonster isLoading={isLoading} monster={monster} />
     );
 }
 

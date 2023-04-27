@@ -1,8 +1,9 @@
-import { GET_MONSTERS, IS_LOADING_MONSTERS } from '../actions/monsters';
+import { GET_MONSTERS, IS_LOADING_MONSTERS, IS_MONSTERS_EMPTY } from '../actions/monsters';
 
 const initialState = {
     monsters: [],
     isLoading: false,
+    isEmpty: false,
 };
 
 const monsters = (state = initialState, action) => {
@@ -10,12 +11,17 @@ const monsters = (state = initialState, action) => {
         case GET_MONSTERS:
             return {
                 ...state,
-                monsters: action.monsters,
+                monsters: [...state.monsters, ...action.monsters],
             };
         case IS_LOADING_MONSTERS:
             return {
                 ...state,
                 isLoading: action.isLoading,
+            };
+        case IS_MONSTERS_EMPTY:
+            return {
+                ...state,
+                isEmpty: action.isEmpty,
             };
         default:
             return state;
