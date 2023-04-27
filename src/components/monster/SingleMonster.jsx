@@ -14,7 +14,7 @@ export default function SingleMonster(props) {
     return (
         <div>
             {props.isLoading ? <Preloader /> : null}
-            <Container maxWidth="sm">
+            <Container className={s.containerPosition} maxWidth="sm">
                 <Box className={s.mainBox} sx={{ fontSize: 24, fontWeight: 'medium' }}>
                     <GetBackButton />
                     <Box>

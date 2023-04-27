@@ -24,7 +24,7 @@ export default function Monster(props) {
                         gutterBottom variant="h5"
                         component="div"
                     >
-                        {props.name}
+                        <span>{props.name}</span>
                     </Typography>
                     <Typography
                         variant="body2"
