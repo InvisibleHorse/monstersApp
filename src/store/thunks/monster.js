@@ -4,6 +4,6 @@ import { monsters } from '../../api/monstersApi';
 export const getMonster = id => async dispatch => {
     dispatch(setIsLoadingMonster(true));
     const response = await monsters.getMonster(id);
-    dispatch(setIsLoadingMonster(true));
+    dispatch(setIsLoadingMonster(false));
     dispatch(setMonster(response.data));
 };

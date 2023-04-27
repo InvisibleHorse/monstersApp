@@ -10,7 +10,7 @@ const monster = (state = initialState, action) => {
         case GET_MONSTER:
             return {
                 ...state,
-                monster: action.monster,
+                monster: { ...action.monster },
             };
         case IS_LOADING_MONSTER:
             return {
