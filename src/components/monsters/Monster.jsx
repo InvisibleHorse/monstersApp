@@ -19,15 +19,28 @@ export default function Monster(props) {
             <Card className={s.card}>
                 <ImageOfMonster id={props.id} />
                 <CardContent className={s.cardContent}>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {props.name}
+                    <Typography
+                        className={s.textStyle}
+                        gutterBottom variant="h5"
+                        component="div"
+                    >
+                        <span>{props.name}</span>
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        className={s.textStyle}
+                    >
                         <span className={s.span}>Home Planet: </span>{props.company}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" color="success" onClick={onClickMoreInfo}>
+                    <Button
+                        className={s.textStyle}
+                        size="small"
+                        color="success"
+                        onClick={onClickMoreInfo}
+                    >
                         More info
                     </Button>
                 </CardActions>
