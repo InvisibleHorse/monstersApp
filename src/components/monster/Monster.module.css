@@ -10,7 +10,7 @@
     inset;
 }
 .mainBox{
-    border-radius: 20%;
+    border-radius: 4px;
     background-color: #fff;
     margin:auto;
     padding: 2rem;
