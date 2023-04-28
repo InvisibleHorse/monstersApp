@@ -24,6 +24,7 @@ function MonstersContainer() {
     };
     const [limit] = useState(3);
     const [page, setPage] = useState(1);
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         if (monsters.length === 0) {
@@ -38,7 +39,10 @@ function MonstersContainer() {
 
     return (
         <Container maxWidth="md">
-            <Monsters onClickMoreInfo={onClickMoreInfo} monsters={monsters} />
+            <Monsters
+                onClickMoreInfo={onClickMoreInfo} monsters={monsters} search={search}
+                setSearch={setSearch}
+            />
             {isLoading ? <Preloader /> : null}
             { isEmpty
                 ? null

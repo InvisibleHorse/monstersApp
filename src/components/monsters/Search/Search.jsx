@@ -1,8 +1,13 @@
 import React from 'react';
-import { IconButton, Box, TextField } from '@mui/material';
+import { Box, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import PropTypes from 'prop-types';
 
-export default function Search() {
+export default function Search({ search, setSearch }) {
+    const handleChange = e => {
+        setSearch(e.target.value);
+    };
+
     return (
         <Box
             component="form"
@@ -13,15 +18,14 @@ export default function Search() {
                 label="Search for an alien"
                 variant="standard"
                 color="success"
+                value={search}
+                onChange={handleChange}
             />
-            <IconButton
-                type="button"
-                sx={{ p: '10px' }}
-                color="success"
-                aria-label="search"
-            >
-                <SearchIcon />
-            </IconButton>
+            <SearchIcon color="success" />
         </Box>
     );
 }
+Search.propTypes = {
+    search: PropTypes.string.isRequired,
+    setSearch: PropTypes.func.isRequired,
+};
