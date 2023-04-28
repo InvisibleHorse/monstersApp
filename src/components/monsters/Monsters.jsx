@@ -12,7 +12,7 @@ function Monsters(props) {
                 {props.monsters
                     .filter(monster => (props.search.toLowerCase() === ''
                         ? monster
-                        : monster.name.toLowerCase().includes(props.search)))
+                        : monster.name.toLowerCase().includes(props.search.toLowerCase())))
                     .map(monster => (
                         <Monster
                             key={monster.id}
