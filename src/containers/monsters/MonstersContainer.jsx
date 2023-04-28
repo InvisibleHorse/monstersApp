@@ -9,6 +9,7 @@ import Monsters from '../../components/monsters/Monsters';
 import { getMonster } from '../../store/thunks/monster';
 import { getMonsters } from '../../store/thunks/monsters';
 import Preloader from '../../partials/Preloader';
+import s from '../../components/monsters/Monsters.module.css';
 
 function MonstersContainer() {
     const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function MonstersContainer() {
     };
     const [limit] = useState(3);
     const [page, setPage] = useState(1);
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         if (monsters.length === 0) {
@@ -37,11 +39,22 @@ function MonstersContainer() {
 
     return (
         <Container maxWidth="md">
-            <Monsters onClickMoreInfo={onClickMoreInfo} monsters={monsters} />
+            <Monsters
+                onClickMoreInfo={onClickMoreInfo} monsters={monsters} search={search}
+                setSearch={setSearch}
+            />
             {isLoading ? <Preloader /> : null}
             { isEmpty
                 ? null
-                : <Button color="success" onClick={loadMore}>Load more</Button> }
+                : (
+                    <Button
+                        className={s.textStyle}
+                        color="success"
+                        onClick={loadMore}
+                    >
+                        Load more
+                    </Button>
+                ) }
         </Container>
     );
 }
