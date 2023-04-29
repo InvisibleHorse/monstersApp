@@ -15,4 +15,7 @@ export const monsters = {
     getMonster(id) {
         return instance.get(`users/${id}`);
     },
+    filterMonsters(page, limit, search) {
+        return instance.get(`users?_page=${page}&_limit=${limit}&name_like=${search}`);
+    },
 };
