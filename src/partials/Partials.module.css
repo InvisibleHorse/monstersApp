@@ -26,3 +26,6 @@
     margin:0;
     font-weight: bold;
 }
+.minHeight {
+    min-height: 35rem;
+}

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import PropTypes from 'prop-types';
 
-export default function Search({ search, setSearch }) {
+export default function Search({ handleChangeSearch }) {
+    const [search, setSearch] = useState('');
     const handleChange = e => {
         setSearch(e.target.value);
+        handleChangeSearch(search);
     };
 
     return (
@@ -26,6 +28,5 @@ export default function Search({ search, setSearch }) {
     );
 }
 Search.propTypes = {
-    search: PropTypes.string.isRequired,
-    setSearch: PropTypes.func.isRequired,
+    handleChangeSearch: PropTypes.func.isRequired,
 };

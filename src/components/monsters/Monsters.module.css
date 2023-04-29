@@ -23,3 +23,6 @@
 .boldness {
     font-width: 800 !important;
 }
+.buttonHidden {
+    visibility: hidden ;
+}

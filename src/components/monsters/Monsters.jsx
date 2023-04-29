@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 import { Container, Grid } from '@mui/material';
 import Monster from './Monster';
 import Search from './Search/Search';
+import NotFound from '../../partials/NotFound';
 
 function Monsters(props) {
     return (
         <Container sx={{ py: 3 }} maxWidth="md">
-            <Search search={props.search} setSearch={props.setSearch} />
+            <Search handleChangeSearch={props.handleChangeSearch} />
             <Grid container>
-                {props.monsters
-                    .filter(monster => (props.search.toLowerCase() === ''
-                        ? monster
-                        : monster.name.toLowerCase().includes(props.search.toLowerCase())))
+                {props.monsters.length > 0 ? props.monsters
                     .map(monster => (
                         <Monster
                             key={monster.id}
@@ -21,7 +19,7 @@ function Monsters(props) {
                             id={monster.id}
                             onClickMoreInfo={props.onClickMoreInfo}
                         />
-                    ))}
+                    )) : (<NotFound />)}
             </Grid>
         </Container>
     );
@@ -30,7 +28,6 @@ function Monsters(props) {
 Monsters.propTypes = {
     monsters: PropTypes.instanceOf(Array).isRequired,
     onClickMoreInfo: PropTypes.func.isRequired,
-    search: PropTypes.string,
-    setSearch: PropTypes.func,
+    handleChangeSearch: PropTypes.func.isRequired,
 };
 export default Monsters;
