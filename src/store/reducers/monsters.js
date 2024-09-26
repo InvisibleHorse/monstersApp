@@ -1,7 +1,13 @@
-import { GET_MONSTERS, IS_LOADING_MONSTERS, IS_MONSTERS_EMPTY } from '../actions/monsters';
+import {
+    FILTER_MONSTERS,
+    GET_MONSTERS,
+    IS_LOADING_MONSTERS,
+    IS_MONSTERS_EMPTY,
+} from '../actions/monsters';
 
 const initialState = {
     monsters: [],
+    searchedMonsters: [],
     isLoading: false,
     isEmpty: false,
 };
@@ -22,6 +28,11 @@ const monsters = (state = initialState, action) => {
             return {
                 ...state,
                 isEmpty: action.isEmpty,
+            };
+        case FILTER_MONSTERS:
+            return {
+                ...state,
+                searchedMonsters: action.filter,
             };
         default:
             return state;
