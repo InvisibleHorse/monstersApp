@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/monstersApp/static/css/main.8f830822.css",
-    "main.js": "/monstersApp/static/js/main.507b27c9.js",
+    "main.css": "/monstersApp/static/css/main.ba84951d.css",
+    "main.js": "/monstersApp/static/js/main.faf737d8.js",
     "index.html": "/monstersApp/index.html",
-    "main.8f830822.css.map": "/monstersApp/static/css/main.8f830822.css.map",
-    "main.507b27c9.js.map": "/monstersApp/static/js/main.507b27c9.js.map"
+    "main.ba84951d.css.map": "/monstersApp/static/css/main.ba84951d.css.map",
+    "main.faf737d8.js.map": "/monstersApp/static/js/main.faf737d8.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f830822.css",
-    "static/js/main.507b27c9.js"
+    "static/css/main.ba84951d.css",
+    "static/js/main.faf737d8.js"
   ]
 }
